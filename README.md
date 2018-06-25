@@ -79,7 +79,7 @@ private static async Task CheckForSubscriptionChangesAsync(string resource, Trac
  HttpClient client = new HttpClient(); 
   
  // Send Graph request to fetch mail 
- HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/ Jump " + resource); 
+ HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/" + resource); 
   
  request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);  
   
