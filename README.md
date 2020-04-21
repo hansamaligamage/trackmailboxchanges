@@ -31,8 +31,8 @@ public static async Task Run([HttpTrigger(AuthorizationLevel.Function, "get", "p
 Process email box chanegs, email notification is parsed into an object for later use
 
 ```
-private static async Task ProcessWebhookNotificationsAsync(HttpRequestMessage req, TraceWriter log,
- Func<SubscriptionNotification, Task<bool>> processSubscriptionNotification) 
+private static async Task<HttpResponseMessage> ProcessWebhookNotificationsAsync(HttpRequestMessage req, TraceWriter log, 
+Func<SubscriptionNotification, Task<bool>> processSubscriptionNotification)
 { 
   // Read the body of the request and parse the notification 
   string content = await req.Content.ReadAsStringAsync(); 
